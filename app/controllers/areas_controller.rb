@@ -1,5 +1,7 @@
 class AreasController < ApplicationController
 
+	before_action :authentication
+
 	def index
 	    @areas = Area.all
 	    render json: @areas
