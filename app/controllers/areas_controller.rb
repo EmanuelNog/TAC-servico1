@@ -26,7 +26,7 @@ class AreasController < ApplicationController
 
 	private
 		def area_params
-		  params.require(:area).permit(:type, :geoloc)
+		  params.require(:area).permit(:type_area, :geoloc)
 		end
 
 end
