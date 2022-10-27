@@ -1,17 +1,10 @@
 class SessionsController < ApplicationController
 
-	# def signup
-	#     @user = User.new(user_params)
-	#     if @user.save
-	#       render json: @user, status: :created
-	#     else
-	#       render json: @user.errors, status: :unprocessable_entity
-	#     end
-	# end
-
 	def login
+		# find_by e utilizado pois ele retorna nulo se nao encontrar nada,
+		# mas o find retorn um exception, fica mais facil pra fazer o if.
 		user = User.find_by(email: params[:email])
-		#user = User.find(:email)
+		# user = User.find(:email)
 
 		if user && user.password == params[:password]
 			token = encode_user_data({user_data: user.id})

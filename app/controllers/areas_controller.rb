@@ -17,13 +17,6 @@ class AreasController < ApplicationController
 	    end
 	end
 
-	    
-		# if @user.areas.create(area_params) 
-	 #      render json: @area, status: :created
-	 #    else
-	 #      render json: @area.errors, status: :unprocessable_entity
-	 #    end
-
 	def destroy
 	    @user = User.find(params[:user_id])
 	    @area = @user.comments.find(params[:id])
